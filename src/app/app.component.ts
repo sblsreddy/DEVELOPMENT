@@ -8,7 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   name: string | undefined;
   date: string | undefined;
-  amount: string | undefined;
+  amount: number | undefined;
+  height: number | undefined;
+  miles: number | undefined;
+
+  car = {
+    make : 'TOYOTA',
+    model : 'Camry',
+    year : '2012'
+  }
 
   onNameChange(target: EventTarget) {
     const value = (<HTMLInputElement>target).value;
@@ -25,6 +33,18 @@ export class AppComponent {
   onAmountChange(target: EventTarget) {
     const value = (<HTMLInputElement>target).value;
     console.log(value);
-    this.amount = value;
+    this.amount = parseInt(value);
+  }
+
+  onHeightChange(target: EventTarget) {
+    const value = (<HTMLInputElement>target).value;
+    console.log(value);
+    this.height = parseFloat(value);
+  }
+
+  onMilesChange(target: EventTarget) {
+    const value = (<HTMLInputElement>target).value;
+    console.log(value);
+    this.miles = parseFloat(value);
   }
 }

@@ -52,6 +52,40 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="form-group col">
+      <label>Height</label>
+      <input (input)="onHeightChange($event.target!)" />
+    </div>
+
+    <div class="col">
+      <label><b>Decimal value format : </b></label>
+
+      <div>
+        {{ height | number: '1.1-3' }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Miles</label>
+      <input (input)="onMilesChange($event.target!)" />
+    </div>
+
+    <div class="col">
+      <label><b>Miles to Kilometers : </b></label>
+
+      <div>
+        {{ miles | convert | number : '1.0-2' }}
+      </div>
+    </div>
+  </div>
+
+
+  <label><b>Printing JSON for *debugging only and not for production </b></label>
+{{ car | json }}
+
 </div>
 
 
