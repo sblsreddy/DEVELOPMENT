@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+
     currentPage = 0;
 
   // Array property 
@@ -109,6 +110,8 @@ export class AppComponent {
     }
   ];
 
-
+  checkWindowIndex(index: number): any{
+    return Math.abs(this.currentPage - index)
+  }
  
 }
