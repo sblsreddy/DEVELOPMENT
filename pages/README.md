@@ -11,6 +11,13 @@ Go to the folder you want to create the project and open node js from the folder
 > cd pages  ( make sure if all the folders are created)
 > code .  ( the project will open in visual code)
 
+# CUSTOM Directive creation angular command line ?
+------------------------------------------------------------
+Go to the folder you want to create the project and open node js from the folder
+> ng generate directive class ( class is the name of directive and we use whatever we want)
+>  it will create 2 files class.directive.ts, class.directive.spec.ts and update app.module.ts)
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
