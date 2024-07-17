@@ -4,15 +4,13 @@ import { Directive, ElementRef, Input} from '@angular/core';
   selector: '[appClass]'
 })
 export class ClassDirective {
-
- // @Input() backgroundColor : string | undefined;
   
   constructor(private element : ElementRef) {     
     console.log('Custom directive class used');
     
   }
 
-  @Input() set backgroundColor(color : string){
+  @Input('appClass') set backgroundColor(color : string){
     this.element.nativeElement.style.backgroundColor = color;
   }
 

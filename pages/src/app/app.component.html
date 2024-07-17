@@ -26,6 +26,6 @@
 
 <!-- div logic is displaying the image based on current page -->
 <div>
-   <h4 appClass [backgroundColor]=" 'teal' ">  {{ images[currentPage].title }}</h4> <!-- property binding syntax for parent class -->
+   <h4  [appClass]=" 'green' ">  {{ images[currentPage].title }}</h4> <!-- property binding syntax for parent class -->
    <img [src]= "images[currentPage].url" />
 </div>
