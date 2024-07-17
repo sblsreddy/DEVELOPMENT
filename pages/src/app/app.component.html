@@ -1,14 +1,20 @@
+<!-- nav is only for displaying the page numbers and navigating between pages logic-->
 <nav>
   <ul class="pagination">
 
       <li class="page-item" [ngClass]="{ disabled : currentPage === 0}">
         <a class="page-link" (click)="currentPage = currentPage -1"> Prev </a>
       </li>
-
-      <li class="page-item" [ngClass]="{ active : i === currentPage }"
-       *ngFor="let image of images; let i=index;">
-        <a (click)="currentPage = i" class="page-link">{{ i + 1 }}</a>
-      </li>
+      
+      <!-- if use div it will change the styling, to avoid this ng-container was introduced to apply
+       multiple structural directives on an element , ng-container is an hidden field to resolve the styling issue
+        because bootstrap css doesn't want any other html element in between <ul> tags as per it's requirement-->
+      <ng-container *ngFor="let image of images; let i=index;">
+          <li class="page-item" [ngClass]="{ active : i === currentPage }"
+          *ngIf=" i < 5 ">
+            <a (click)="currentPage = i" class="page-link">{{ i + 1 }}</a>
+          </li>
+      </ng-container>
 
       <li class="page-item" [ngClass]="{ disabled : currentPage === images.length -1}">
         <a class="page-link" (click)="currentPage = currentPage +1"> Next </a>
@@ -17,6 +23,7 @@
 
 </nav>
 
+<!-- div logic is displaying the image based on current page -->
 <div>
    <h4>  {{ images[currentPage].title }}</h4>
    <img [src]= "images[currentPage].url" />
