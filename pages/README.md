@@ -15,8 +15,12 @@ Go to the folder you want to create the project and open node js from the folder
 ------------------------------------------------------------
 Go to the folder you want to create the project and open node js from the folder
 > ng generate directive class ( class is the name of directive and we use whatever we want)
+> This is attribute directive
 >  it will create 2 files class.directive.ts, class.directive.spec.ts and update app.module.ts)
 
+
+> ng generate directive times ( times is the name of directive and we use whatever we want)
+> This is Structural directive
 
 ## Development server
 

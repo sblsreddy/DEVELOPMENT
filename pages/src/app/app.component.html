@@ -9,7 +9,7 @@
       <!-- if use div it will change the styling, to avoid this ng-container was introduced to apply
        multiple structural directives on an element , ng-container is an hidden field to resolve the styling issue
         because bootstrap css doesn't want any other html element in between <ul> tags as per it's requirement-->
-      <ng-container *ngFor="let image of images; let i=index;">
+      <ng-container *appTimes="images.length; let i = index">
           <li class="page-item" [ngClass]="{ active : i === currentPage }"
           *ngIf=" checkWindowIndex(i)">
 
